@@ -8,6 +8,7 @@ counter = 0
 
 while True:
     user_num = input('Я загадал число от 1 до 100, угадай его: ')
+    print(num)
     if not user_num.isdigit():
         print('Можно ввести только числовое значение')
     else:
@@ -15,13 +16,17 @@ while True:
         counter += 1
         if user_num == num:
             print(f'Ты угадал! Количество попыток: {counter}')
-            new_game = input('Хочешь сыграть еще? (y/n) ')
-            if new_game == 'y':
-                num = randint(1, 100)
-                counter = 0
-            else:
-                print('Спасибо за игру!')
-                break
+            while True:
+                new_game = input('Хочешь сыграть еще? (y/n) ').strip().lower()
+                if new_game == 'y':
+                    num = randint(1, 100)
+                    counter = 0
+                    break
+                elif new_game == 'n':
+                    print('Спасибо за игру!')
+                    exit()
+                else:
+                    print('y = да, n = нет. Другие значения не принимаются!')
         elif user_num > num:
             print(f"Загаданное число меньше. Попробуй еще раз!")
         else:
