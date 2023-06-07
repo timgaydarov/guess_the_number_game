@@ -8,7 +8,6 @@ counter = 0
 
 while True:
     user_num = input('Я загадал число от 1 до 100, угадай его: ').strip()
-    print(num)
     if not user_num.isdigit():
         print('Можно ввести только числовое значение')
     else:
