@@ -9,7 +9,7 @@ counter = 0
 while True:
     user_num = input('Я загадал число от 1 до 100, угадай его: ').strip()
     if not user_num.isdigit():
-        print('Можно ввести только числовое значение')
+        print('Можно ввести только целое число!')
     else:
         user_num = int(user_num)
         counter += 1
